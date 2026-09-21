@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JavaScript 语言深入</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:radial-gradient(circle at 25% 0%,#1a1033 0%,#0a0a18 55%);
+    color:#e2e8f0;min-height:100vh;display:flex;justify-content:center;
+    padding:40px 18px 60px;-webkit-font-smoothing:antialiased}
+  .wrap{width:100%;max-width:720px}
+  a{color:#c084fc;text-decoration:none}
+  a:hover{color:#d8b4fe}
+  .tag{display:inline-block;font-size:12px;letter-spacing:.12em;color:#c084fc;
+    border:1px solid #7c3aed55;background:#4c1d9533;padding:5px 12px;
+    border-radius:999px;margin-bottom:20px}
+  h1{font-size:28px;line-height:1.35;font-weight:700;letter-spacing:-.01em}
+  .sub{color:#94a3b8;margin-top:12px;font-size:15px;line-height:1.75}
+  .meta{display:flex;gap:20px;margin-top:20px;font-size:13px;
+    color:#64748b;flex-wrap:wrap}
+  .meta b{color:#cbd5e1;font-weight:600}
+  .player{margin-top:26px;background:#12101f;border:1px solid #241f3a;
+    border-radius:16px;padding:20px;box-shadow:0 20px 50px -20px #000c}
+  audio{width:100%;display:block}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .btn{flex:1;min-width:130px;text-align:center;text-decoration:none;
+    padding:11px 16px;border-radius:10px;font-size:14px;font-weight:600;
+    background:#7c3aed;color:#fff;transition:.18s;border:none;cursor:pointer;
+    font-family:inherit;display:inline-block}
+  .btn:hover{background:#8b5cf6;transform:translateY(-1px);color:#fff}
+  .btn.ghost{background:#241f3a;color:#cbd5e1}
+  .btn.ghost:hover{background:#2f2849;color:#e2e8f0}
+  h2{font-size:13px;letter-spacing:.1em;color:#64748b;margin:34px 0 12px;
+    font-weight:600}
+  .ch{display:flex;align-items:baseline;gap:14px;padding:12px 14px;
+    border-radius:10px;cursor:pointer;transition:.15s;border:1px solid transparent}
+  .ch:hover{background:#12101f;border-color:#241f3a}
+  .ch .t{font-variant-numeric:tabular-nums;color:#c084fc;font-size:13px;
+    font-weight:600;min-width:44px}
+  .ch .n{font-size:15px;color:#cbd5e1}
+  .ch .d{margin-left:auto;font-size:12px;color:#475569}
+  .card{display:block;background:#12101f;border:1px solid #241f3a;
+    border-radius:14px;padding:18px;margin-top:12px;transition:.18s}
+  .card:hover{border-color:#7c3aed66;transform:translateY(-1px)}
+  .card.off{opacity:.45;cursor:default}
+  .card .row{display:flex;align-items:baseline;gap:12px}
+  .card .idx{font-variant-numeric:tabular-nums;color:#c084fc;font-weight:700;
+    font-size:13px;min-width:34px}
+  .card .ttl{font-size:17px;color:#e2e8f0;font-weight:600}
+  .card .pr{margin-left:auto;font-size:12.5px;color:#64748b;
+    font-variant-numeric:tabular-nums}
+  .card .desc{color:#64748b;font-size:13px;margin-top:8px;line-height:1.7}
+  .nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;font-size:13.5px}
+  .nav a,.nav span{flex:1;min-width:120px;text-align:center;padding:10px 12px;
+    border-radius:10px;background:#12101f;border:1px solid #241f3a;color:#cbd5e1}
+  .nav a:hover{border-color:#7c3aed66;color:#fff}
+  .nav span{opacity:.4}
+  footer{margin-top:38px;padding-top:20px;border-top:1px solid #241f3a;
+    font-size:12.5px;color:#475569;line-height:1.9}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="tag">CHAPTER 03 · EP 01</span>
+  <h1>JavaScript 语言深入</h1>
+  <p class="sub">第 3 章 · 第 1 讲 · 16:33</p>
+
+  <div class="meta">
+    <span>时长 <b>16:33</b></span>
+    <span>音色 <b>云健 · 男声</b></span>
+    <span>章节 <b>7</b></span>
+  </div>
+
+  <div class="player">
+    <audio id="au" controls preload="metadata" src="c03-e01-javascript-deep-dive.mp3"></audio>
+    <div class="actions">
+      <a class="btn" href="c03-e01-javascript-deep-dive.mp3" download>下载 / 保存音频</a>
+      <a class="btn ghost" href="c03-e01-javascript-deep-dive.srt" download>下载字幕 SRT</a>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="../c03.html">← 第 3 章目录</a>
+    <span>← 上一讲</span>
+    <a href="../typescript/">下一讲 →</a>
+  </div>
+
+  <h2>章节导航（点击跳转）</h2>
+  <div id="chapters">
+    <div class="ch" data-t="0.1"><span class="t">0:00</span><span class="n">片头</span><span class="d">1:29</span></div>
+    <div class="ch" data-t="90.0"><span class="t">1:29</span><span class="n">第一章 目标被改写了</span><span class="d">2:05</span></div>
+    <div class="ch" data-t="215.6"><span class="t">3:35</span><span class="n">第二章 数据与三个坑</span><span class="d">2:33</span></div>
+    <div class="ch" data-t="369.3"><span class="t">6:09</span><span class="n">第三章 逻辑与那个丢失的 this</span><span class="d">2:20</span></div>
+    <div class="ch" data-t="509.7"><span class="t">8:29</span><span class="n">第四章 交互与半张事件循环图</span><span class="d">3:07</span></div>
+    <div class="ch" data-t="697.6"><span class="t">11:37</span><span class="n">第五章 能力重排与审查清单</span><span class="d">2:49</span></div>
+    <div class="ch" data-t="866.8"><span class="t">14:26</span><span class="n">片尾</span><span class="d">2:06</span></div>
+  </div>
+
+  <footer>
+    音频 32kbps / 24kHz / 单声道，直链 MP3（支持边下边播与拖动进度条）<br>
+    原文出处：<a href="https://www.easyvibecoding.cn/zh-cn/appendix/3-browser-and-frontend/javascript-deep-dive.html" target="_blank" rel="noopener">https://www.easyvibecoding.cn/zh-cn/appendix/3-browser-and-frontend/javascript-deep-dive.html</a><br>
+    本页由 <code>render_site.py</code> 从 <code>state.json</code> 自动生成，请勿手改。
+  </footer>
+</div>
+<script>
+(function () {
+  var au = document.getElementById('au');
+  document.querySelectorAll('.ch').forEach(function (el) {
+    el.addEventListener('click', function () {
+      au.currentTime = parseFloat(el.dataset.t);
+      au.play();
+    });
+  });
+  au.addEventListener('timeupdate', function () {
+    var cur = au.currentTime, active = null;
+    document.querySelectorAll('.ch').forEach(function (el) {
+      if (cur >= parseFloat(el.dataset.t)) active = el;
+    });
+    document.querySelectorAll('.ch').forEach(function (el) {
+      el.style.background = el === active ? '#12101f' : '';
+      el.style.borderColor = el === active ? '#7c3aed66' : 'transparent';
+    });
+  });
+})();
+</script>
+</body>
+</html>
