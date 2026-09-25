@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>全栈开发导论：Vibe Coding 时代的计算机知识地图</title>
+<title>数据表示原理：编码、存储与传输</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
@@ -89,51 +89,51 @@
 </head>
 <body>
 <div class="wrap">
-  <span class="tag">CHAPTER 01 · EP 01</span>
-  <h1>全栈开发导论：Vibe Coding 时代的计算机知识地图</h1>
-  <p class="sub">第 1 章 · 第 1 讲 · 16:14</p>
+  <span class="tag">CHAPTER 01 · EP 06</span>
+  <h1>数据表示原理：编码、存储与传输</h1>
+  <p class="sub">第 1 章 · 第 6 讲 · 14:21</p>
 
   <div class="meta">
-    <span>时长 <b>16:14</b></span>
+    <span>时长 <b>14:21</b></span>
     <span>音色 <b>云健 · 男声</b></span>
     <span>章节 <b>8</b></span>
   </div>
 
   <div class="player">
-    <audio id="au" controls preload="metadata" src="https://pub-127d7cde1eba4ee1a877b0c3517daa58.r2.dev/c01-e01-vibe-coding-fullstack.mp3"></audio>
+    <audio id="au" controls preload="metadata" src="c01-e06-data-encoding-storage.mp3"></audio>
     <div class="actions">
-      <a class="btn" href="https://pub-127d7cde1eba4ee1a877b0c3517daa58.r2.dev/c01-e01-vibe-coding-fullstack.mp3" download>下载 / 保存音频</a>
-      <a class="btn ghost" href="c01-e01-vibe-coding-fullstack.srt" download>下载字幕 SRT</a>
+      <a class="btn" href="c01-e06-data-encoding-storage.mp3" download>下载 / 保存音频</a>
+      <a class="btn ghost" href="c01-e06-data-encoding-storage.srt" download>下载字幕 SRT</a>
     </div>
   </div>
 
   <div class="subs-wrap" id="subswrap">
     <h2>同步字幕</h2>
-    <div class="subs" id="subs" data-srt="c01-e01-vibe-coding-fullstack.srt" role="region" aria-label="同步字幕"></div>
+    <div class="subs" id="subs" data-srt="c01-e06-data-encoding-storage.srt" role="region" aria-label="同步字幕"></div>
     <button class="follow" id="follow" type="button" hidden>回到当前</button>
   </div>
 
   <div class="nav">
     <a href="../../c01.html">← 第 1 章目录</a>
-    <span>← 上一讲</span>
-    <a href="../power-on-to-web/">下一讲 →</a>
+    <a href="../operating-systems/">← 上一讲</a>
+    <span>下一讲 →</span>
   </div>
 
   <h2>章节导航（点击跳转）</h2>
   <div id="chapters">
-    <div class="ch" data-t="0.1"><span class="t">0:00</span><span class="n">开场</span><span class="d">1:13</span></div>
-    <div class="ch" data-t="73.7"><span class="t">1:13</span><span class="n">第一段 · 这是一张什么样的地图</span><span class="d">1:29</span></div>
-    <div class="ch" data-t="162.7"><span class="t">2:42</span><span class="n">第二段 · 六大领域，先建根据地</span><span class="d">2:10</span></div>
-    <div class="ch" data-t="293.7"><span class="t">4:53</span><span class="n">第三段 · 前后端与语言，地图的中段</span><span class="d">2:40</span></div>
-    <div class="ch" data-t="454.4"><span class="t">7:34</span><span class="n">第四段 · 技术校正，四处要点破</span><span class="d">3:46</span></div>
-    <div class="ch" data-t="680.5"><span class="t">11:20</span><span class="n">第五段 · A I 时代，能力重排</span><span class="d">2:03</span></div>
-    <div class="ch" data-t="804.1"><span class="t">13:24</span><span class="n">第六段 · 审查清单与约束文件</span><span class="d">1:56</span></div>
-    <div class="ch" data-t="920.5"><span class="t">15:20</span><span class="n">收尾</span><span class="d">0:53</span></div>
+    <div class="ch" data-t="0.1"><span class="t">0:00</span><span class="n">开场</span><span class="d">1:00</span></div>
+    <div class="ch" data-t="60.7"><span class="t">1:00</span><span class="n">第一段 · 一切皆是密码本</span><span class="d">1:38</span></div>
+    <div class="ch" data-t="159.0"><span class="t">2:38</span><span class="n">第二段 · 字符编码三部曲</span><span class="d">2:02</span></div>
+    <div class="ch" data-t="281.5"><span class="t">4:41</span><span class="n">第三段 · 图片与声音的编码</span><span class="d">1:53</span></div>
+    <div class="ch" data-t="395.1"><span class="t">6:35</span><span class="n">第四段 · 存储金字塔</span><span class="d">1:21</span></div>
+    <div class="ch" data-t="476.8"><span class="t">7:56</span><span class="n">第五段 · 串行的胜利</span><span class="d">1:54</span></div>
+    <div class="ch" data-t="591.6"><span class="t">9:51</span><span class="n">第六段 · 技术校正与 A I 重排</span><span class="d">3:23</span></div>
+    <div class="ch" data-t="795.2"><span class="t">13:15</span><span class="n">收尾</span><span class="d">1:05</span></div>
   </div>
 
   <footer>
     音频 32kbps / 24kHz / 单声道，直链 MP3（支持边下边播与拖动进度条）<br>
-    原文出处：<a href="https://www.easyvibecoding.cn/zh-cn/appendix/1-computer-fundamentals/vibe-coding-fullstack.html" target="_blank" rel="noopener">https://www.easyvibecoding.cn/zh-cn/appendix/1-computer-fundamentals/vibe-coding-fullstack.html</a><br>
+    原文出处：<a href="https://www.easyvibecoding.cn/zh-cn/appendix/1-computer-fundamentals/data-encoding-storage.html" target="_blank" rel="noopener">https://www.easyvibecoding.cn/zh-cn/appendix/1-computer-fundamentals/data-encoding-storage.html</a><br>
     本页由 <code>render_site.py</code> 从 <code>state.json</code> 自动生成，请勿手改。
   </footer>
 </div>
